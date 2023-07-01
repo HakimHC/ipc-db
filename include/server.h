@@ -19,15 +19,21 @@
 # define FNV_OFFSET 	2166136261
 # define FNV_PRIME 	16777619
 
-# define MAX_HT_SIZE	100
+# define MAX_HT_SIZE	2048
+
+extern struct s_hashtable *hashtable[MAX_HT_SIZE];
 
 typedef struct s_hashtable
 {
 	char	*key;
 	char	*value;
+	struct s_hashtable *next;
 }	t_hashtable;
 
 /* Hashing algorithm (FNV-1a) */
 int	hash_fnv1a(const char *str);
+
+/* Hashtable utilities */
+const char* get(const char* value);
 
 #endif

@@ -13,8 +13,9 @@
 /* You should have received a copy of the GNU General Public License */
 /* along with IPC-db.  If not, see <https://www.gnu.org/licenses/>. */
 
-#include "server.h"
 #include <stdint.h>
+
+#include "server.h"
 
 int	hash_fnv1a(const char *str)
 {
