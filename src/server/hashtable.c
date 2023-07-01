@@ -27,8 +27,12 @@ const char* get(const char* key)
 
 	idx = hash_fnv1a(key);
 	tmp = hashtable[idx];
-	while (strcmp(tmp->key, key))
+	if (!tmp)
+		return (char *)NULL;
+	while (tmp && strcmp(tmp->key, key))
 		tmp = tmp->next;
+	if (!tmp)
+		return (char *)NULL;
 	return tmp->value;
 }
 

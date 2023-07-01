@@ -8,6 +8,10 @@ CFLAGS 	= -Wall -Werror -Wextra
 
 CFLAGS 	+= -I./include
 
+CFLAGS 	+= -fsanitize=address -g3
+
+LDFLAGS	= -fsanitize=address
+
 SRCDIR	= src
 
 SERVDIR = server
