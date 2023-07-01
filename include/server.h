@@ -21,7 +21,7 @@
 
 # define MAX_HT_SIZE	2048
 
-extern struct s_hashtable *hashtable[MAX_HT_SIZE];
+extern struct s_hashtable **hashtable;
 
 typedef struct s_hashtable
 {
@@ -35,5 +35,6 @@ int	hash_fnv1a(const char *str);
 
 /* Hashtable utilities */
 const char* get(const char* value);
+int	set(const char *key, const char *value);
 
 #endif

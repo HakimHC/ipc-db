@@ -14,13 +14,19 @@
 /* along with IPC-db.  If not, see <https://www.gnu.org/licenses/>. */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
 
 #include "server.h"
 
+struct	s_hashtable** hashtable;
+
 int	main(void)
 {
-	printf("%d\n", hash_fnv1a("hola"));
-	printf("%d\n", hash_fnv1a("holb"));
-	printf("%d\n", hash_fnv1a("cola"));
+	hashtable = calloc(sizeof(struct s_hashtable*), MAX_HT_SIZE);
+	if (!hashtable && errno == ENOMEM)
+		return perror("malloc"), EXIT_FAILURE;
+	set("hola", "que tal");
+	printf("%s\n", get("hola"));
 	return 0;
 }

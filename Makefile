@@ -8,8 +8,6 @@ CFLAGS 	= -Wall -Werror -Wextra
 
 CFLAGS 	+= -I./include
 
-CFLAGS 	+= -I./libft/inc
-
 SRCDIR	= src
 
 SERVDIR = server
@@ -17,7 +15,8 @@ SERVDIR = server
 CLIDIR = cli
 
 SERVSRC = main.c \
-	  hash.c
+	  hash.c \
+	  hashtable.c
 
 CLISRC 	= main.c
 
@@ -38,12 +37,10 @@ $(CLIENT): $(CLIOBJ)
 	$(CC) $(CFLAGS) $(CLIOBJ) $(LDFLAGS) -o $(CLIENT)
 
 %.o: %.c
-	@make bonus -sC libft 2>&1 >/dev/null
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(SRVOBJ) $(CLIOBJ)
-	@make fclean -sC libft 2>&1 >/dev/null
 
 fclean: clean
 	$(RM) $(SERVER) $(CLIENT)
