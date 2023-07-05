@@ -21,7 +21,10 @@
 
 # define MAX_HT_SIZE	2048
 
-extern struct s_hashtable **hashtable;
+extern struct s_hashtable** 	hashtable;
+
+extern char*			buf_key;
+extern char*			buf_value;
 
 typedef struct s_hashtable
 {

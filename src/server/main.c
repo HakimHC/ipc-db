@@ -18,8 +18,13 @@
 #include <errno.h>
 
 #include "server.h"
+#include "shared.h"
 
-struct	s_hashtable** hashtable;
+// Global array of pointes to key-value structure
+struct	s_hashtable** 	hashtable;
+
+char 			*buf_key;
+char 			*buf_value;
 
 int	main(void)
 {

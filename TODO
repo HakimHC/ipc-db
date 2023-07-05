@@ -1,0 +1,10 @@
+PROTOTYPE
+sending struct over socket:
+	loop 3 times over struct, adjusting the pointer 8 bytes each time
+	send length of string
+	recive and save length
+	send string
+	recieve
+	repeat
+
+most likely i will just send 2 strings: key and value, and an integer for the type of operation

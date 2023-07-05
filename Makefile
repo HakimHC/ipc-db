@@ -20,7 +20,7 @@ CLIDIR = cli
 
 SERVSRC = main.c \
 	  hash.c \
-	  hashtable.c
+	  hashtable.c \
 
 CLISRC 	= main.c
 

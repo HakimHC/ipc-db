@@ -56,11 +56,8 @@ int	set(const char *key, const char *value)
 	if (!hashtable[idx])
 	{
 		hashtable[idx] = create_elem(key, value);
-		if (errno == ENOMEM)
-		{
-			perror("malloc");
-			return EXIT_FAILURE;
-		}
+		if (!hashtable[idx] && errno == ENOMEM)
+			return perror("malloc"), EXIT_FAILURE;
 		return EXIT_SUCCESS;
 	}
 	tmp = hashtable[idx];
