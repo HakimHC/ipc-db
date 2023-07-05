@@ -10,4 +10,21 @@ enum op_tokens
 	DELETE
 };
 
+enum error_code
+{
+	SUCCESS = -10,
+	NOMEM,
+	REMOVE,
+	SOCKET,
+	BIND,
+	LISTEN,
+	ACCEPT,
+	CONNECT,
+	SEND,
+	RECV
+};
+
+# define SOCK_PATH "/tmp/dbsock"
+# define BUFFER_SIZE 512
+
 #endif

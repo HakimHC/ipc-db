@@ -11,4 +11,8 @@ typedef struct data
 	char	*arg2;
 }	t_data;
 
+# define BACKLOG 5
+
+enum error_code recieve_data(void);
+
 #endif

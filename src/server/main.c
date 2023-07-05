@@ -19,18 +19,21 @@
 
 #include "server.h"
 #include "shared.h"
+#include "socket.h"
 
 // Global array of pointes to key-value structure
 struct	s_hashtable** 	hashtable;
 
 char 			*buf_key;
 char 			*buf_value;
+int			op;
 
 int	main(void)
 {
 	hashtable = calloc(sizeof(struct s_hashtable*), MAX_HT_SIZE);
 	if (!hashtable && errno == ENOMEM)
 		return perror("malloc"), EXIT_FAILURE;
+	init();
 	set("hola", "que tal");
 	const char *value = get("jaja");
 	if (value)
@@ -38,5 +41,7 @@ int	main(void)
 	else
 	 	printf("%p\n", value);
 	printf("%s\n", get("hola"));
-	return 0;
+	int r = recieve_data();
+	printf("%d\n", r);
+	return r;
 }

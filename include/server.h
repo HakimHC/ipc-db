@@ -25,6 +25,7 @@ extern struct s_hashtable** 	hashtable;
 
 extern char*			buf_key;
 extern char*			buf_value;
+extern int			op;
 
 typedef struct s_hashtable
 {
@@ -39,5 +40,8 @@ int	hash_fnv1a(const char *str);
 /* Hashtable utilities */
 const char* get(const char* value);
 int	set(const char *key, const char *value);
+
+/* Initializer */
+void	init(void);
 
 #endif

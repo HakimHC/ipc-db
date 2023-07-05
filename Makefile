@@ -16,15 +16,21 @@ SRCDIR	= src
 
 SERVDIR = server
 
-CLIDIR = cli
+CLIDIR 	= cli
+
+SOCKDIR = socket
 
 SERVSRC = main.c \
 	  hash.c \
 	  hashtable.c \
+	  init.c
+
+SOCKSRC = recieve.c
 
 CLISRC 	= main.c
 
-SERV	= $(addprefix $(SRCDIR)/,$(addprefix $(SERVDIR)/,$(SERVSRC)))
+SERV	= $(addprefix $(SRCDIR)/,$(addprefix $(SERVDIR)/,$(SERVSRC))) \
+	  $(addprefix $(SRCDIR)/,$(addprefix $(SOCKDIR)/,$(SOCKSRC))) \
 
 CLI	= $(addprefix $(SRCDIR)/,$(addprefix $(CLIDIR)/,$(CLISRC)))
 
