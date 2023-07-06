@@ -34,14 +34,6 @@ int	main(void)
 	if (!hashtable && errno == ENOMEM)
 		return perror("malloc"), EXIT_FAILURE;
 	init();
-	set("hola", "que tal");
-	const char *value = get("jaja");
-	if (value)
-		printf("%s\n", value);
-	else
-	 	printf("%p\n", value);
-	printf("%s\n", get("hola"));
-	int r = recieve_data();
-	printf("%d\n", r);
-	return r;
+	recieve_data();
+	return EXIT_SUCCESS;
 }

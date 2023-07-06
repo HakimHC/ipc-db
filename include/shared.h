@@ -10,6 +10,8 @@ enum op_tokens
 	DELETE
 };
 
+# define NUMOPS 5
+
 enum error_code
 {
 	SUCCESS = -10,
@@ -26,5 +28,7 @@ enum error_code
 
 # define SOCK_PATH "/tmp/dbsock"
 # define BUFFER_SIZE 512
+
+int	recieve_str(char *ptr, int fd);
 
 #endif

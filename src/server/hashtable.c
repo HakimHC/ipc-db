@@ -62,7 +62,20 @@ int	set(const char *key, const char *value)
 	}
 	tmp = hashtable[idx];
 	while (tmp->next)
+	{
+		if (!strcmp(tmp->key, key))
+		{
+			tmp->value = (char *)value;
+			return EXIT_SUCCESS;
+		}
 		tmp = tmp->next;
+	}
+	if (!strcmp(tmp->key, key))
+	{
+		tmp->value = (char *)value;
+		return EXIT_SUCCESS;
+	}
+	tmp = tmp->next;
 	tmp->next = create_elem(key, value);
 	if (!tmp->next && errno == ENOMEM)
 		return perror("malloc"), EXIT_FAILURE;

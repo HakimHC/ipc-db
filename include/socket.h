@@ -6,7 +6,7 @@
 
 typedef struct data
 {
-	char	*op;
+	int	op;
 	char	*arg1;
 	char	*arg2;
 }	t_data;

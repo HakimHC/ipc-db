@@ -44,4 +44,8 @@ int	set(const char *key, const char *value);
 /* Initializer */
 void	init(void);
 
+/* Utilities */
+const char * get_time(void);
+const char *num_to_op(int num);
+
 #endif

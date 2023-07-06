@@ -23,7 +23,8 @@ SOCKDIR = socket
 SERVSRC = main.c \
 	  hash.c \
 	  hashtable.c \
-	  init.c
+	  init.c \
+	  utils.c
 
 SOCKSRC = recieve.c
 
